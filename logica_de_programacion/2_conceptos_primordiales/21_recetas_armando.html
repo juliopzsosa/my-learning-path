@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<center><big><h1>Ingredientes para la Receta</h1></big></center>
+
+<script>
+// Realizado por Julio Paz Sosa - 12/04/2023
+// Sígueme en LinkedIn - https://www.linkedin.com/in/juliopzsosa/
+
+    function imprimirIngredientes(texto) {
+        document.write("<center><big>" + texto + "</big></center><br>");
+    }
+    
+    function agregarIngredientes(cantidad){
+        var ingredientes = [];
+        var contador = 1;
+
+        while (contador <= cantidad) {
+            var ingrediente = prompt("Ingrese el ingrediente " + contador + ":");
+            ingrediente = ingrediente.toLowerCase();
+            // String.toLowerCase: Convierte la cadena de texto en minúsculas.
+                // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/string/tolowercase
+            ingrediente = ingrediente.charAt(0).toUpperCase() + ingrediente.slice(1);
+            // String.charAt: Ubica un caracter indexando desde 0.
+                // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/string/charat
+            // String.toUpperCase: Convierte la cadena de texto en mayúsculas.
+                // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/string/touppercase
+            // String.slice: Inserta parte de la cadena desde el índice indicado.
+                // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/string/slice
+                
+            var marca = false;
+
+            if (ingrediente != "") {
+                for (var posicion = 0; posicion < n; posicion++) {
+                    if (ingrediente == ingredientes[posicion]) {
+                        alert("¡Ya has ingresado este ingrediente!\nPor favor, vuelte a intentar");
+                        marca = true;
+                        break;
+                    }
+                }
+
+                if (marca == false) {
+                    ingredientes.push(ingrediente);
+                    contador++;
+                }
+            } else {
+                alert("¡No puedes dejar un campo vacío!\nPor favor, vuelte a intentar");
+            }
+        }
+
+        return ingredientes;
+
+    }
+
+    var n = parseInt(prompt("¿Cuántos ingredientes se necesitan para la receta?"));
+    var ingredientes = agregarIngredientes(n);
+
+    for (var renglon = 0; renglon < n; renglon++) {
+        imprimirIngredientes("• " + ingredientes[renglon]);
+    }
+    
+</script>

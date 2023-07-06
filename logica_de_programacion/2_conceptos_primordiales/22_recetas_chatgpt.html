@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<center><big><h1>Ingredientes para la Receta</h1></big></center>
+
+<script>
+
+// En la función agregarIngredientes, reemplacé el while y el if que utilizabas para verificar si se ingresaba un ingrediente vacío o repetido por un do-while que solicita continuamente el ingreso de un ingrediente hasta que este no esté vacío y no esté ya en la lista de ingredientes.
+// Utilicé el método trim() para eliminar los espacios en blanco al principio y al final del texto ingresado por el usuario.
+// Reemplacé el ciclo for y la función imprimirIngredientes en el script final por un forEach en la variable ingredientes.
+
+    function imprimirIngredientes(texto) {
+        document.write("<center><big>" + texto + "</big></center><br>");
+    }
+    
+    function agregarIngredientes(cantidad) {
+        var ingredientes = [];
+
+        for (var i = 0; i < cantidad; i++) {
+            var ingrediente;
+
+            do {
+                ingrediente = prompt("Ingrese el ingrediente " + (i + 1) + ":");
+                ingrediente = ingrediente ? ingrediente.trim().toLowerCase() : "";
+            } while (ingrediente === "" || ingredientes.includes(ingrediente));
+
+            ingredientes.push(ingrediente);
+        }
+
+        return ingredientes;
+    }
+
+    var n = parseInt(prompt("¿Cuántos ingredientes se necesitan para la receta?"));
+    var ingredientes = agregarIngredientes(n);
+
+    ingredientes.forEach(function (ingrediente) {
+        imprimirIngredientes("• " + ingrediente);
+    });
+</script>

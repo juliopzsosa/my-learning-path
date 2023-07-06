@@ -1,0 +1,37 @@
+<canvas width="350" height="350"></canvas>
+
+<script>
+/*
+Autor: Julio Paz Sosa
+Fecha: 2023-04-14
+Descripción: Este código dibuja la bandera Wiphala utilizando el elemento Canvas y JavaScript.
+*/
+    function dibujarWiphala(x, y, color) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50);
+    }
+
+    pantalla = document.querySelector("canvas");
+    pincel = pantalla.getContext("2d");
+    
+    var paleta =["white","yellow","orange","red","purple","blue","green"]
+    
+    for (let y = 0; y < 7; y++) {
+    
+        for (let x = 0; x < 7; x++) {
+            dibujarWiphala(x * 50, y * 50, paleta[x]);
+        }
+    
+        paleta.unshift(paleta.pop());
+        // array.pop: elimina el último elemento de una matriz y devuelve ese elemento.
+            // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/array/pop
+        // array.unshift: añade uno o más elementos al principio de una matriz y devuelve la nueva longitud de la matriz.
+            // Inf. obtenida de DevDocs - https://devdocs.io/javascript/global_objects/array/unshift
+
+        // En términos breves, los métodos unshift y pop conjugados hacen que el último indice del arreglo de colores se mueva al principio de este.
+    }
+
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(0, 0, 350, 350);
+
+</script>

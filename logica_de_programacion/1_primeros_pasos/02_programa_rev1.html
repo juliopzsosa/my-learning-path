@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+	var anio = 2013; // Declaración de variable para el año
+	var salLin = "<br><br>"; // Genera 2 saltos de línea
+	
+	document.write("<h1>¡Bienvenidos!</h1>");
+	
+	var edad1 = anio - 1990;
+	var edad2 = anio - 1988;
+	var edad3 = anio - 1994;
+	var edad4 = anio - 1996;
+	var edad5 = anio - 1991;
+	var edad6 = anio - 1966;
+	var edad7 = anio - 1965;
+
+	document.write("La edad de Julio es " + (edad1) + salLin);
+	document.write("La edad de Jennifer es " + (edad2) + salLin);
+	document.write("La edad de Max es " + (edad3) + salLin);
+	document.write("La edad de Daniela es " + (edad4) + salLin);
+	document.write("La edad de Wicho es " + (edad5) + salLin);
+	document.write("La edad de Cristina es " + (edad6) + salLin);
+	document.write("La edad de Fidel es " + (edad7) + salLin);
+	document.write("<br>");
+
+	var promedio = (edad1 + edad2 + edad3 + edad4 + edad5 + edad6 + edad7) / 7;
+	// Calculo del promedio de todas las edades
+
+	document.write("La edad promedio de estas personas es: " + Math.round(promedio));
+	// Imprime en pantalla promedido redondeado de las edades
+
+</script>
