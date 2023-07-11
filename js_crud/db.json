@@ -4,6 +4,11 @@
       "nombre": "Pedro Chicarcas",
       "email": "pedro.chicarcas@perritoslokos.org",
       "id": 1
+    },
+    {
+      "nombre": "Juan Carlos Bodoque",
+      "email": "jcarlos.bodoque@perritoslokos.org",
+      "id": 2
     }
   ]
 }
