@@ -1,8 +1,5 @@
-.campo-texto {
-    margin: 24px 0px;
-}
-
-.campo-texto label {
+.lista-opciones label {
+    display: block;
     color: #212121;
     font-size: 18px;
     font-weight: 600;
@@ -10,7 +7,7 @@
     margin-bottom: 8px;
 }
 
-.campo-texto input {
+.lista-opciones select {
     width: 100%;
     background: #FFFFFF;
     box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
@@ -18,5 +15,4 @@
     padding: 30px 20px;
     outline-color: #6278F7;
     font-size: 16px;
-    box-sizing: border-box;
 }
