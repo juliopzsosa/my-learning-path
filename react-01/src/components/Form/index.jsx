@@ -12,9 +12,9 @@ const Form = () => {
     return <section className="formulario">
         <form onSubmit={handleSend}>
             <h2>Rellena el formulario para crear el colaborador.</h2>
-            <TextField label='Nombre' placeholder='nombre'/>
-            <TextField label='Puesto' placeholder='puesto'/>
-            <TextField label='Foto' placeholder='enlace de foto'/>
+            <TextField label='Nombre' placeholder='nombre' required/>
+            <TextField label='Puesto' placeholder='puesto' required/>
+            <TextField label='Foto' placeholder='enlace de foto' required/>
             <DropdownMenu placeholder='Seleccionar equipo...'/>
             <CreateButton text='Crear'/>
         </form>
