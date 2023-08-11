@@ -8,16 +8,8 @@ const DropdownMenu = (props) => {
         });
 
     */
+  
 
-  const teams = [
-    "Programación",
-    "Front End",
-    "Data Science",
-    "Devops",
-    "UX y Diseño",
-    "Móvil",
-    "Innovación y Gestión",
-  ];
 
   const handleChange = (e) => {
     props.fieldFunction(e.target.value);
@@ -30,8 +22,8 @@ const DropdownMenu = (props) => {
         <option value="" disabled defaultValue="" hidden>
           Seleccionar equipo...
         </option>
-        {teams.map((team, index) => (
-          <option key={index} value={team}>{team}</option>
+        {props.equipos.map((equipo, index) => (
+          <option key={index} value={equipo}>{equipo}</option>
         ))}
         ;
       </select>
