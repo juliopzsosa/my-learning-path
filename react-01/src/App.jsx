@@ -4,16 +4,28 @@ import Header from "./components/Header/";
 import Form from "./components/Form/";
 import MiOrg from "./components/MiOrg";
 import Equipo from "./components/Equipo";
+import Footer from "./components/Footer";
 
 function App() {
   const [showForm, updateStatus] = useState(false);
+  const [colaboradores, actualizarColaboradores] = useState([
+    {name: 'Julio',
+    title: 'Desarrollador',
+    photo: 'https://github.com/juliopzsosa.png',
+    team: 'Front End',}
+  ]);  
 
   const triggerShow = () => {
     updateStatus(!showForm);
   };
 
-  //* Ternario => Condicion ? seMuestra : noSeMuestra
-  //* Condicion && seMuestra
+  // Registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log('Nuevo colaborador: ', colaborador);
+    // Spread Operator
+    actualizarColaboradores([...colaboradores, colaborador]);
+  };
 
   const equipos = [
     {
@@ -56,11 +68,29 @@ function App() {
   return (
     <>
       <Header />
-      {showForm && <Form equipos={equipos.map((equipo) => equipo.titulo )}/>}
+      {showForm && <Form 
+        equipos={equipos.map((equipo) => equipo.titulo )}
+        registrarColaborador={registrarColaborador}
+        />
+      }
+        
       <MiOrg triggerShow={triggerShow} />
-      {equipos.map((equipo) => (<Equipo datos={equipo} key={equipo.titulo} />))}
+      {
+        equipos.map((equipo) => <Equipo 
+          datos={equipo} 
+          key={equipo.titulo} 
+          colaboradores={colaboradores.filter(colaborador => colaborador.team === equipo.titulo)}
+          />
+        )
+      }
+
+      <Footer />
     </>
   );
 }
+
+// Línea 65
+// Ternario => Condicion ? seMuestra : noSeMuestra
+// Condicion && seMuestra
 
 export default App;

@@ -10,6 +10,8 @@ const Form = (props) => {
   const [photo, setPhoto] = useState("");
   const [team, setTeam] = useState("");
 
+  const { registrarColaborador } = props;
+
   const handleSend = (e) => {
     e.preventDefault();
     let dataToSend = {
@@ -18,7 +20,7 @@ const Form = (props) => {
       photo,
       team,
     };
-    console.log(dataToSend);
+    registrarColaborador(dataToSend);
   };
 
   return (
@@ -47,12 +49,11 @@ const Form = (props) => {
           fieldFunction={setPhoto}
         />
         <DropdownMenu
-          // placeholder="Seleccionar equipo..."
           fieldValue={team}
           fieldFunction={setTeam}
           equipos={props.equipos}
         />
-        <CreateButton text="Crear"/>
+        <CreateButton text="Crear" />
       </form>
     </section>
   );
