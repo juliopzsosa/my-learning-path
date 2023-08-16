@@ -8,12 +8,36 @@ import Footer from "./components/Footer";
 
 function App() {
   const [showForm, updateStatus] = useState(false);
-  const [colaboradores, actualizarColaboradores] = useState([
-    {name: 'Julio',
-    title: 'Desarrollador',
-    photo: 'https://github.com/juliopzsosa.png',
-    team: 'Front End',}
-  ]);  
+  const [colaboradores, actualizarColaboradores] = useState([{
+    team: "Front End",
+    photo: "https://github.com/harlandlohora.png",
+    name: "Harland Lohora",
+    title: "Instructor",
+    },
+    {
+    team: "Programación",
+    photo: "https://github.com/genesysR-dev.png",
+    name: "Genesys Rondón",
+    title: "Desarrolladora de software e instructora",
+    },
+    {
+    team: "UX y Diseño",
+    photo: "https://github.com/JeanmarieAluraLatam.png",
+    name: "Jeanmarie Quijada",
+    title: "Instructora en Alura Latam",
+    },
+    {
+    team: "Programación" ,
+    photo: "https://github.com/christianpva.png",
+    name: "Christian Velasco",
+    title: "Head de Alura e Instructor",
+    },
+    {
+    team: "Innovación y Gestión",
+    photo: "https://github.com/JoseDarioGonzalezCha.png",
+    name: "Jose Gonzalez",
+    title: "Dev FullStack",
+  }]);  
 
   const triggerShow = () => {
     updateStatus(!showForm);
@@ -25,6 +49,10 @@ function App() {
     console.log('Nuevo colaborador: ', colaborador);
     // Spread Operator
     actualizarColaboradores([...colaboradores, colaborador]);
+  };
+
+  const eliminarColaborador = () => {
+    console.log('Eliminando colaborador');
   };
 
   const equipos = [
@@ -80,6 +108,7 @@ function App() {
           datos={equipo} 
           key={equipo.titulo} 
           colaboradores={colaboradores.filter(colaborador => colaborador.team === equipo.titulo)}
+          eliminarColaborador={eliminarColaborador}
           />
         )
       }
