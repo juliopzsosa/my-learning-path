@@ -2,7 +2,7 @@ import "./Colaborador.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 const Colaborador = (props) => {
-  const { name, photo, team, title } = props.datos;
+  const { name, photo, equipo, title } = props.datos;
   const { colorPrimario, eliminarColaborador } = props;
 
   return (

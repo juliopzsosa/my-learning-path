@@ -3,7 +3,7 @@ import "./DropdownMenu.css";
 const DropdownMenu = (props) => {
   /* Map Method:
 
-        array.map( (team, index) => {
+        array.map( (item, index) => {
             return <option></option>;
         });
 

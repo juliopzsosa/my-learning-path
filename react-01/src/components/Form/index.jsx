@@ -8,7 +8,7 @@ const Form = (props) => {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [photo, setPhoto] = useState("");
-  const [team, setTeam] = useState("");
+  const [equipo, setTeam] = useState("");
 
   const { registrarColaborador } = props;
 
@@ -18,7 +18,7 @@ const Form = (props) => {
       name,
       title,
       photo,
-      team,
+      equipo,
     };
     registrarColaborador(dataToSend);
   };
@@ -49,7 +49,7 @@ const Form = (props) => {
           fieldFunction={setPhoto}
         />
         <DropdownMenu
-          fieldValue={team}
+          fieldValue={equipo}
           fieldFunction={setTeam}
           equipos={props.equipos}
         />
