@@ -8,7 +8,7 @@ const Equipo = (props) => {
    * const { propiedad1, propiedad2 } = props.variable
    */
 
-  const { colorPrimario, titulo } = props.datos;
+  const { colorPrimario, titulo, id } = props.datos;
   const { colaboradores, eliminarColaborador, actualizarColor } = props;
 
   const estiloFondo = { backgroundColor: hexToRgba (colorPrimario, 0.40) };
@@ -23,7 +23,7 @@ const Equipo = (props) => {
           type='color'
           value= {colorPrimario}
           onChange={(e) => {
-            actualizarColor(e.target.value, titulo)
+            actualizarColor(e.target.value, id)
           }}
         />
           <h3 style={estiloTitulo}>{titulo}</h3>
