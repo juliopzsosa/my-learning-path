@@ -8,8 +8,6 @@ const DropdownMenu = (props) => {
         });
 
     */
-  
-
 
   const handleChange = (e) => {
     props.fieldFunction(e.target.value);
@@ -23,7 +21,9 @@ const DropdownMenu = (props) => {
           Seleccionar equipo...
         </option>
         {props.equipos.map((equipo, index) => (
-          <option key={index} value={equipo}>{equipo}</option>
+          <option key={index} value={equipo}>
+            {equipo}
+          </option>
         ))}
         ;
       </select>

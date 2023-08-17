@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
-import TextField from "../TextField";
+import Campo from "../Campo";
 import DropdownMenu from "../DropdownMenu";
 import CreateButton from "../CreateButton";
 
@@ -27,28 +27,28 @@ const Form = (props) => {
 
   const manejarNuevoEquipo = (e) => {
     e.preventDefault();
-    crearEquipo({titulo, colorPrimario: color});
-  }
+    crearEquipo({ titulo, colorPrimario: color });
+  };
 
   return (
     <section className="formulario">
       <form onSubmit={handleSend}>
         <h2>Rellena el formulario para crear el colaborador.</h2>
-        <TextField
+        <Campo
           label="Nombre"
           placeholder="nombre"
           required
           fieldValue={name}
           fieldFunction={setName}
         />
-        <TextField
+        <Campo
           label="Puesto"
           placeholder="puesto"
           required
           fieldValue={title}
           fieldFunction={setTitle}
         />
-        <TextField
+        <Campo
           label="Foto"
           placeholder="enlace de foto"
           required
@@ -64,20 +64,20 @@ const Form = (props) => {
       </form>
       <form onSubmit={manejarNuevoEquipo}>
         <h2>Rellena el formulario para crear un equipo.</h2>
-        <TextField
+        <Campo
           label="Equipo"
           placeholder="Ingresar equipo"
           required
           fieldValue={titulo}
           fieldFunction={actualizarTitulo}
         />
-        <TextField
+        <Campo
           label="Color"
           placeholder="Ingresar color en hexadecimal: #XXX"
           required
           fieldValue={color}
           fieldFunction={actualizarColor}
-          
+          type="color"
         />
         <CreateButton text="Registrar equipo" />
       </form>

@@ -16,6 +16,7 @@ function App() {
       photo: "https://github.com/harlandlohora.png",
       name: "Harland Lohora",
       title: "Instructor",
+      fav: false,
     },
     {
       id: uuid(),
@@ -23,6 +24,7 @@ function App() {
       photo: "https://github.com/genesysR-dev.png",
       name: "Genesys Rondón",
       title: "Desarrolladora de software e instructora",
+      fav: false,
     },
     {
       id: uuid(),
@@ -30,6 +32,7 @@ function App() {
       photo: "https://github.com/JeanmarieAluraLatam.png",
       name: "Jeanmarie Quijada",
       title: "Instructora en Alura Latam",
+      fav: true,
     },
     {
       id: uuid(),
@@ -37,6 +40,7 @@ function App() {
       photo: "https://github.com/christianpva.png",
       name: "Christian Velasco",
       title: "Head de Alura e Instructor",
+      fav: false,
     },
     {
       id: uuid(),
@@ -44,6 +48,7 @@ function App() {
       photo: "https://github.com/JoseDarioGonzalezCha.png",
       name: "Jose Gonzalez",
       title: "Dev FullStack",
+      fav: false,
     },
   ]);
   const [equipos, actualizarEquipos] = useState([
@@ -84,8 +89,6 @@ function App() {
     },
   ]);
 
-  console.log(uuid());
-
   const triggerShow = () => {
     updateStatus(!showForm);
   };
@@ -93,13 +96,11 @@ function App() {
   // Registrar colaborador
 
   const registrarColaborador = (colaborador) => {
-    console.log("Nuevo colaborador: ", colaborador);
     // Spread Operator
     actualizarColaboradores([...colaboradores, colaborador]);
   };
 
   const eliminarColaborador = (id) => {
-    console.log("Eliminando colaborador", id);
     const nuevosColaboradores = colaboradores.filter(
       (colaborador) => colaborador.id != id
     );
@@ -107,7 +108,6 @@ function App() {
   };
 
   const actualizarColor = (color, id) => {
-    console.log("Actualizar: ", color, " de ", id);
     const equiposActualizados = equipos.map((equipo) => {
       if (equipo.id === id) {
         equipo.colorPrimario = color;
@@ -118,9 +118,18 @@ function App() {
   };
 
   const crearEquipo = (nuevoEquipo) => {
-    console.log(nuevoEquipo);
     actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid()}]);
   };
+
+  const like = (id) => {
+    const colaboradoresActualizados = colaboradores.map((colaborador) => {
+      if (colaborador.id === id) {
+        colaborador.fav = !colaborador.fav;
+      }
+      return colaborador;
+    })
+    actualizarColaboradores(colaboradoresActualizados);
+  }
 
   return (
     <>
@@ -143,6 +152,7 @@ function App() {
           )}
           eliminarColaborador={eliminarColaborador}
           actualizarColor={actualizarColor}
+          like={like}
         />
       ))}
 
