@@ -10,13 +10,11 @@ const Post = ({ url }) => {
 
   const navigate = useNavigate();
 
-  useEffect (() => {
+  useEffect(() => {
     buscar(`/posts/${id}`, setPost).catch(() => {
-        navigate('/not-found    ')
-
-    })
-
-  },[id])
+      navigate("/not-found");
+    });
+  }, [id]);
 
   return (
     <main className="container flex flex--center">
