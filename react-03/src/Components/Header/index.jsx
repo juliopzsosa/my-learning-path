@@ -24,8 +24,8 @@ const BtnHeader = styled.a`
   margin: 0 10px;
   font-weight: 600;
   border: 2px solid white;
-  color: ${({primary}) => (primary ? colorPrimario : "white")};
-  background: ${({primary}) => (primary ? "white" : "transparent")};
+  color: ${({$primary}) => ($primary ? colorPrimario : "white")};
+  background: ${({$primary}) => ($primary ? "white" : "transparent")};
 `;
 
 const Header = () => {
@@ -34,7 +34,7 @@ const Header = () => {
       <Logo src={logo} alt="Logo Smart Bank" />
       <div>
         <BtnHeader href="https://google.com">Ayuda</BtnHeader>
-        <BtnHeader primary href="https://google.com">
+        <BtnHeader $primary href="https://google.com">
           Salir
         </BtnHeader>
       </div>
