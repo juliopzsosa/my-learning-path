@@ -1,18 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-const FormSignUp = () => {
+function FormSignUp({ handleSubmit }) {
   const [name, setName] = useState('');
-  useEffect(() => {
-    console.log('"name" cambio:', name);
-  }, [name]);
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [prom, setProm] = useState(true);
+  const [news, setNews] = useState(false);
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit({ name, surname, email, prom, news });
+      }}
+    >
       <TextField
         id='name'
         label='Nombre'
@@ -25,11 +31,15 @@ const FormSignUp = () => {
         value={name}
       />
       <TextField
-        id='lastName'
+        id='surname'
         label='Apellidos'
         variant='outlined'
         fullWidth
         margin='normal'
+        onChange={(e) => {
+          setSurname(e.target.value);
+        }}
+        value={surname}
       />
       <TextField
         id='email'
@@ -37,19 +47,35 @@ const FormSignUp = () => {
         variant='outlined'
         fullWidth
         margin='normal'
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+        value={email}
       />
       <FormGroup>
         <FormControlLabel
-          control={<Switch defaultChecked />}
+          control={
+            <Switch
+              checked={prom}
+              onChange={(e) => setProm(e.target.checked)}
+            />
+          }
           label='Promociones'
         />
         <FormControlLabel
-          control={<Switch defaultChecked />}
+          control={
+            <Switch
+              checked={news}
+              onChange={(e) => setNews(e.target.checked)}
+            />
+          }
           label='Novedades'
         />
       </FormGroup>
-      <Button variant='contained'>Registrarse</Button>
+      <Button variant='contained' type='submit'>
+        Registrarse
+      </Button>
     </form>
   );
-};
+}
 export default FormSignUp;
