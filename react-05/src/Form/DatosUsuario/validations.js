@@ -1,17 +1,9 @@
 export const validarEmail = (email) => {
-  const lenght = email.length;
-  if (lenght > 8 && lenght < 50 && email.includes('@' && '.')) {
-    return true;
-  } else {
-    return false;
-  }
+  return email.length > 8 && email.length < 50 && email.includes('@' && '.')
+    ? true
+    : false;
 };
 
 export function validarPassword(password) {
-  const lenght = password.length;
-  if (lenght >= 8 && lenght <= 20) {
-    return true;
-  } else {
-    return false;
-  }
+  return password.length >= 8 && password.length <= 20 ? true : false;
 }
