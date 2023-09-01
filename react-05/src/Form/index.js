@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { LogoSpace, MainSpace, FormSpace, Img } from './styles';
 import DatosUsuario from './DatosUsuario';
@@ -21,9 +21,6 @@ import {
 
 const Form = () => {
   const [step, setStep] = useState(0);
-  const [pasos, setPasos] = useState({});
-
-  useEffect(() => {});
 
   const updateStep = (step) => {
     console.log('Actualizar a paso ', step);
@@ -36,23 +33,7 @@ const Form = () => {
     3: <Complete />,
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    let newStep = step + 1;
-    setStep(newStep);
-    console.log("newStep: ", newStep);
-    console.log("step:", step);
-  };
-
-  const handleChange = (element, position, currentStep, validator) => {
-    const value = element.target.value;
-    const valid = validator(value);
-    console.log(value);
-    console.log(valid);
-    console.log('position: ', position);
-    console.log('currentStep: ', currentStep);
-    console.log('validator: ', validator);
-  };
+  const onSubmit = () => {};
 
   const stepsFlow = {
     0: {
@@ -63,7 +44,7 @@ const Form = () => {
           value: '',
           valid: null,
           helperText: 'Ingresa un correo electrónico válido',
-          onChange: handleChange,
+          onChange: () => {},
           validator: validarEmail,
         },
         {
@@ -72,13 +53,13 @@ const Form = () => {
           value: '',
           valid: null,
           helperText: 'Ingresa una contraseña de 8 a 20 caracteres',
-          onChange: handleChange,
+          onChange: () => {},
           validator: validarPassword,
         },
       ],
       buttonText: 'Siguiente',
       onSubmit,
-    } /* ,
+    }/* ,
     1: {
       inputs: [
         {
@@ -110,12 +91,7 @@ const Form = () => {
         },
       ],
       buttonText: 'Siguiente',
-      onSubmit: () => {
-        if (nombre.valid && apellidos.valid && telefono.valid) {
-          updateStep(2);
-        }
-      },
-    },
+      onSubmit,
     2: {
       inputs: [
         {
@@ -159,7 +135,7 @@ const Form = () => {
       onSubmit: () => {
         // You can define the final submission logic here
       },
-    }, */,
+    }, */
   };
 
   return (
@@ -177,7 +153,7 @@ const Form = () => {
       <FormSpace>
         {step < 3 && <Stepper step={step} />}
         {/* {steps[step]} */}
-        <Step data={stepsFlow[step]} step={step} />
+        <Step data={stepsFlow[step]} step={step}/>
       </FormSpace>
     </Box>
   );
