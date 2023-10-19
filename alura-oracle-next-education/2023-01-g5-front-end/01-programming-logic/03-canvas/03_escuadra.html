@@ -1,0 +1,37 @@
+<canvas width="600" height="400">
+</canvas>
+
+<script>
+    
+    const x0 = 50;
+    const y0 = 50;
+
+    function trianguloMayor(baseMayor, alturaMayor) {
+        var baseMayor;
+        var alturaMayor;
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(x0+0,y0+0);
+        pincel.lineTo(x0+0,y0+alturaMayor);
+        pincel.lineTo(x0+baseMayor,y0+alturaMayor);
+        pincel.fill();
+    }
+
+    function trianguloMenor(baseMenor, alturaMenor) {
+        var baseMenor;
+        var alturaMenor;
+        pincel.fillStyle = "white";
+        pincel.beginPath();
+        pincel.moveTo(x0+50,y0+125);
+        pincel.lineTo(x0+50,y0+alturaMenor);
+        pincel.lineTo(x0+baseMenor,y0+alturaMenor);
+        pincel.fill();
+    }
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    trianguloMayor(400,400);
+    trianguloMenor(225,300);
+    
+</script>

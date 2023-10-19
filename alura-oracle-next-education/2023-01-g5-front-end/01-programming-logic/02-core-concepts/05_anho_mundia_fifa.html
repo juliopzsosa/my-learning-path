@@ -1,0 +1,24 @@
+<meta charset = "UTF-8">
+
+<h1>Año Mundial de la FIFA</h1><hr>
+
+<script>
+    
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(impresion) {
+        document.write(impresion);
+        saltarLinea();
+    } 
+
+    var anhoMundial = 1930;
+    var limite = parseInt(prompt("La siguiente página exhibe los años en los que ha ha habido mundial de la FIFA. Por favor, ingresa un año límite:"));
+
+    while(anhoMundial <= limite){
+        imprimir("Hubo mundial de la FIFA en el año " + anhoMundial);
+        var anhoMundial = anhoMundial + 4;
+    }
+
+</script>

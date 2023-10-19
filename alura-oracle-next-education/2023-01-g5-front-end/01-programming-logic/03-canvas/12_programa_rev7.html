@@ -1,0 +1,28 @@
+<canvas width="600" height="400">
+</canvas>
+
+<script>
+    const pantalla = document.querySelector("canvas");
+    const pincel = pantalla.getContext("2d");
+
+    var x = 20;
+
+    function disenarCircunrencia(x,y,radio){
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400);
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y, radio, 0, 2*Math.PI);
+        pincel.fill();
+    }
+
+    function refrescarPantalla (){
+        if (x <= 580){
+            disenarCircunrencia(x,20,10);
+            x++;
+        }
+    }
+
+    setInterval(refrescarPantalla,5);
+
+</script>

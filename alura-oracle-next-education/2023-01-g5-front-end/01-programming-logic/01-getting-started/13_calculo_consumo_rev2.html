@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+
+<h1>¿Alcohol o gasolina?</h1><hr>
+
+<script>
+    
+    function imprimirEficiencia(tipo,volumen,distancia) {
+        eficiencia = distancia/volumen;
+        document.write("<big>Usando " + tipo + " y consumiendo todo el tanque se hace un recorrido de " + distancia + " kilómetros.</big><br>");
+        document.write("<big>La eficiencia con " + tipo + " es de " + eficiencia + " km/l.</big><br><br>");
+    }
+    
+    var volumen = 40;
+    
+    imprimirEficiencia("Gasolina",volumen,480);
+    imprimirEficiencia("Alcohol",volumen,300);
+    
+</script>

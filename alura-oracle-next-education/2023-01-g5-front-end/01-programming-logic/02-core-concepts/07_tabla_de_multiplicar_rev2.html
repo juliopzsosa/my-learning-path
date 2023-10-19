@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<h1>Tabla de multiplicar</h1><hr>
+
+<script>
+    
+    function imprimir(impresion) {
+        document.write("<big>" + impresion + "</big><br>");
+    } 
+    
+    function multiplicar(base, multiplo) {
+        return (base * multiplo);
+    }
+
+    var base = parseInt(prompt("El siguiente programa imprime la tabla de multiplicar de tu interés. Por favor ingresa un número:"));
+
+    // FOR (inicializador; condición; incremento);
+    for (var multiplo = 0; multiplo <= 10; multiplo++) {
+        resultado = multiplicar(base, multiplo);
+        imprimir(base + " X " + multiplo + " = " + resultado);
+    }
+
+</script>

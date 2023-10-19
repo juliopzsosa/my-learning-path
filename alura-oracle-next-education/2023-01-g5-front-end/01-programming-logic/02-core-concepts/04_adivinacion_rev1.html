@@ -1,0 +1,27 @@
+<meta charset = "UTF-8">
+
+<h1>¡Adivina el número!</h1><hr>
+
+<script>
+    
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(impresion) {
+        document.write(impresion);
+        saltarLinea();
+    } 
+
+    var numGen = Math.round(Math.random()*10);
+    var numIng = parseInt(prompt("Este juego consiste en adivinar un número entre el 1 y el 10. Por favor ingresa un número:"))
+
+    imprimir("Tú ingresaste: " + numIng);
+
+    if (numIng == numGen){
+        imprimir("¡Felicitaciones! Has acertado.")
+    } else {
+        imprimir("¡Lo siento! " + numGen + " era el número. Actualiza presionando F5 para intentarlo de nuevo.")
+    }
+
+</script>

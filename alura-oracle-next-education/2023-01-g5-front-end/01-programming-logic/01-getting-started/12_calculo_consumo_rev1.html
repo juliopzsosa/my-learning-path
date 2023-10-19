@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<h3>¿Alcohol o gasolina?</h3>
+
+<script>
+    
+    var vol = 40;
+    var dis = 480;
+    var ef = dis/vol;
+    var salLin = "<br><br>";
+
+    document.write("Un carro tiene un tanque de " + vol + " litros." + salLin);
+    
+    document.write("Usando gasolina y consumiendo todo el tanque se hace un recorrido de " + dis + " kilómetros." + "<br>");
+    document.write("La eficiencia con gasolina es de " + ef + " km/l" + salLin);
+
+    dis = 300;
+    document.write("Usando alcohol y consumiendo todo el tanque se hace un recorrido de " + dis + " kilómetros." + "<br>");
+    ef = dis/vol;
+    document.write("La eficiencia con alcohol es de " + ef + " km/l");
+
+</script>

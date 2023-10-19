@@ -1,0 +1,36 @@
+<meta charset = "UTF-8">
+
+<h1>¡Adivina el número!</h1><hr>
+
+<script>
+    
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(impresion) {
+        document.write(impresion);
+        saltarLinea();
+    } 
+    function sorteo(n) {
+        return (Math.round(Math.random()*n));
+    } 
+
+    var n = parseInt(prompt("Este juego consiste en adivinar un número entre el 0 y el número que tu definas. Por favor ingresa un número límite:"));
+    var numGen = sorteo(n);
+
+    var numIng = parseInt(prompt("El número a adivinar está en un rango entre 0 y " + n + ". Por favor ingresa un valor:"));
+
+    if (numIng == numGen){
+        imprimir("<big>¡Felicitaciones! Has acertado.</big>");
+    }   else {
+        if (numIng < numGen){
+            imprimir("<big>¡Lo siento! El número que ingresaste era menor al valor a adivinar.</big>");
+        }   else {
+            if (numIng > numGen){
+            imprimir("<big>¡Lo siento! El número que ingresaste era mayor al valor a adivinar.</big>");
+            }
+        } 
+    }
+
+</script>
