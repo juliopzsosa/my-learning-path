@@ -1,0 +1,54 @@
+ID Cliente,Nombre Cliente,Edad,Género,Teléfono,Ciudad,Departamento
+1,Daniel,25,M,2754896,Bogotá,Bogotá D.C.
+2,Danilo,19,M,3256984,Medellín,Antioquia
+3,Martha,46,F,6587465,Tunja,Boyacá
+4,Carla,26,F,6698574,Cartagena,Bolivar
+5,Mauricio,22,M,4785658,Sincelejo,Sucre
+6,Pedro,40,M,3256485,Valledupar,Cesar
+7,Paula,38,F,2548769,Chía,Cundinamarca
+8,Paulo,28,M,6987564,Ibagué,Tolima
+9,Jennifer,37,F,4753215,Montería,Córdoba
+10,Marcela,36,F,4287595,Santa Marta,Magdalena
+11,Marcos,23,M,3215676,Armenia,Quindío
+12,Fernando,46,M,4569875,Pereira,Risaralda
+13,Ana Clara,39,F,5555756,Cali,Valle del Cauca
+14,David,40,M,3256981,Medellín,Antioquia
+15,Allan,31,M,2754897,Bogotá,Bogotá D.C.
+16,Carol,19,F,2754321,Bogotá,Bogotá D.C.
+17,Carolina,39,F,6698575,Cartagena,Bolivar
+18,Germán,55,M,4785654,Sincelejo,Sucre
+19,María,47,F,4287591,Santa Marta,Magdalena
+20,Milena,18,F,6587461,Tunja,Boyacá
+21,Santiago,19,M,3256485,Valledupar,Cesar
+22,Igor,41,M,2754892,Bogotá,Bogotá D.C.
+23,Nicolás,39,M,2754841,Bogotá,Bogotá D.C.
+24,Guillermo,22,M,2753456,Bogotá,Bogotá D.C.
+25,Maira,40,F,5555751,Cali,Valle del Cauca
+26,Ana,25,F,4287592,Santa Marta,Magdalena
+27,Beatriz,77,F,4287593,Santa Marta,Magdalena
+28,Lucas,73,M,3215676,Armenia,Quindío
+29,Fernanda,39,F,3256491,Valledupar,Cesar
+30,Solangel,31,F,3256492,Valledupar,Cesar
+31,Soraya,37,F,4569821,Pereira,Risaralda
+32,Arnoldo,59,M,4569822,Pereira,Risaralda
+33,Alex,24,M,4569575,Pereira,Risaralda
+34,Alexander,29,M,5555743,Cali,Valle del Cauca
+35,Karen,35,F,5555722,Cali,Valle del Cauca
+36,Bruna,46,F,6698566,Cartagena,Bolivar
+37,Natalia,33,F,6698567,Cartagena,Bolivar
+38,Nathaly,28,F,6698568,Cartagena,Bolivar
+39,Enzo,40,M,3256912,Medellín,Antioquia
+40,Alberto,32,M,3256914,Medellín,Antioquia
+41,Gabriel,50,M,3256924,Medellín,Antioquia
+42,Gabriela,33,F,3256784,Medellín,Antioquia
+43,Iris,49,F,6987561,Ibagué,Tolima
+44,Mirza,45,F,6983564,Ibagué,Tolima
+45,Marcia,48,F,3215671,Armenia,Quindío
+46,Alina,34,F,3115676,Armenia,Quindío
+47,Marisol,31,F,2794892,Bogotá,Bogotá D.C.
+48,Matilde,79,F,2714822,Bogotá,Bogotá D.C.
+49,Lina,38,F,2134892,Bogotá,Bogotá D.C.
+50,Camila,42,F,4743215,Montería,Córdoba
+51,Ricardo,32,M,4653215,Montería,Córdoba
+52,Rómulo,30,M,3212981,Medellín,Antioquia
+53,Rodrigo,57,M,3257781,Medellín,Antioquia
